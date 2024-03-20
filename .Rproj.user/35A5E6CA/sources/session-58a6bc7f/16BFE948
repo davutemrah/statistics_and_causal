@@ -3,7 +3,7 @@
     "path": "~/Desktop/GITHUB/5_Statistics/_output.yml",
     "project_path": "_output.yml",
     "type": "yaml",
-    "hash": "1725471510",
+    "hash": "1554283968",
     "contents": "",
     "dirty": false,
     "created": 1710976479807.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "18,0",
+        "cursorPosition": "9,66",
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1710976567,
+    "lastKnownWriteTime": 1710977590,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1710976567110,
+    "last_content_update": 1710977590207,
     "read_only": false,
     "read_only_alternatives": []
 }
