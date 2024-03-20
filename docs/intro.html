@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Intro | Statistics notes</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Intro | Statistics notes" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Intro | Statistics notes" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Davut Ayan" />
+
+
+<meta name="date" content="2023-11-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="tests.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Intro</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#including-plots"><i class="fa fa-check"></i><b>2.1</b> Including Plots</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="intro.html"><a href="intro.html#binary-classification"><i class="fa fa-check"></i><b>2.1.1</b> Binary Classification:</a></li>
+<li class="chapter" data-level="2.1.2" data-path="intro.html"><a href="intro.html#multi-class-classification"><i class="fa fa-check"></i><b>2.1.2</b> Multi-Class Classification:</a></li>
+<li class="chapter" data-level="2.1.3" data-path="intro.html"><a href="intro.html#continuous-outcome-regression"><i class="fa fa-check"></i><b>2.1.3</b> Continuous Outcome (Regression):</a></li>
+<li class="chapter" data-level="2.1.4" data-path="intro.html"><a href="intro.html#decision-trees"><i class="fa fa-check"></i><b>2.1.4</b> Decision Trees:</a></li>
+<li class="chapter" data-level="2.1.5" data-path="intro.html"><a href="intro.html#random-forest"><i class="fa fa-check"></i><b>2.1.5</b> Random Forest:</a></li>
+<li class="chapter" data-level="2.1.6" data-path="intro.html"><a href="intro.html#random-forest-1"><i class="fa fa-check"></i><b>2.1.6</b> Random Forest:</a></li>
+<li class="chapter" data-level="2.1.7" data-path="intro.html"><a href="intro.html#gradient-boosting"><i class="fa fa-check"></i><b>2.1.7</b> Gradient Boosting:</a></li>
+<li class="chapter" data-level="2.1.8" data-path="intro.html"><a href="intro.html#overall-considerations"><i class="fa fa-check"></i><b>2.1.8</b> Overall Considerations:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="tests.html"><a href="tests.html"><i class="fa fa-check"></i><b>3</b> Tests</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="intro" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Intro<a href="intro.html#intro" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
+<p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="intro.html#cb2-1" tabindex="-1"></a><span class="fu">summary</span>(cars)</span></code></pre></div>
+<pre><code>##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00</code></pre>
+<div id="including-plots" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Including Plots<a href="intro.html#including-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You can also embed plots, for example:</p>
+<p><img src="bookdown-demo_files/figure-html/pressure-1.png" width="672" /></p>
+<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
+
+<p>Different machine learning algorithms are suitable for various types of tasks, such as binary classification, multi-class classification, and predicting continuous outcomes. Here are some commonly used algorithms for each task:</p>
+<div id="binary-classification" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Binary Classification:<a href="intro.html#binary-classification" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>Logistic Regression:</strong>
+<ul>
+<li>Logistic Regression is a simple and widely used algorithm for binary classification tasks. It models the probability that an instance belongs to a particular class.</li>
+</ul></li>
+<li><strong>Support Vector Machines (SVM):</strong>
+<ul>
+<li>SVM is effective for binary classification. It finds a hyperplane that best separates the data into two classes.</li>
+</ul></li>
+<li><strong>Random Forest:</strong>
+<ul>
+<li>Random Forest is an ensemble learning algorithm that performs well for both binary and multi-class classification tasks. It builds multiple decision trees and combines their predictions.</li>
+</ul></li>
+<li><strong>Gradient Boosting (e.g., XGBoost, LightGBM):</strong>
+<ul>
+<li>Gradient Boosting algorithms are powerful for binary classification tasks. They build trees sequentially, with each tree correcting the errors of the previous one.</li>
+</ul></li>
+<li><strong>Neural Networks:</strong>
+<ul>
+<li>Neural networks, especially architectures like feedforward neural networks, can be used for binary classification tasks. They are particularly effective for complex, non-linear relationships.</li>
+</ul></li>
+</ol>
+</div>
+<div id="multi-class-classification" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Multi-Class Classification:<a href="intro.html#multi-class-classification" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>Logistic Regression (One-vs-All):</strong>
+<ul>
+<li>Logistic Regression can be extended to handle multi-class classification by training multiple binary classifiers (one for each class) in a one-vs-all fashion.</li>
+</ul></li>
+<li><strong>Multinomial Naive Bayes:</strong>
+<ul>
+<li>Naive Bayes can be extended to handle multiple classes, and the multinomial variant is commonly used for text classification tasks.</li>
+</ul></li>
+<li><strong>Random Forest:</strong>
+<ul>
+<li>Random Forest can handle multi-class classification naturally. It builds multiple decision trees, and the final prediction is based on voting across all classes.</li>
+</ul></li>
+<li><strong>Gradient Boosting (e.g., XGBoost, LightGBM):</strong>
+<ul>
+<li>Gradient Boosting algorithms can handle multi-class classification tasks. They build a series of decision trees, each one correcting the errors of the ensemble.</li>
+</ul></li>
+<li><strong>K-Nearest Neighbors (KNN):</strong>
+<ul>
+<li>KNN can be used for multi-class classification by assigning the class label that is most common among the k nearest neighbors.</li>
+</ul></li>
+</ol>
+</div>
+<div id="continuous-outcome-regression" class="section level3 hasAnchor" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> Continuous Outcome (Regression):<a href="intro.html#continuous-outcome-regression" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>Linear Regression:</strong>
+<ul>
+<li>Linear Regression is a basic and widely used algorithm for predicting continuous outcomes. It models the relationship between the features and the target variable as a linear equation.</li>
+</ul></li>
+<li><strong>Decision Trees for Regression:</strong>
+<ul>
+<li>Decision trees can be used for regression tasks by predicting the average value of the target variable in each leaf node.</li>
+</ul></li>
+<li><strong>Random Forest for Regression:</strong>
+<ul>
+<li>Random Forest can be applied to regression tasks by aggregating the predictions of multiple decision trees.</li>
+</ul></li>
+<li><strong>Gradient Boosting for Regression (e.g., XGBoost, LightGBM):</strong>
+<ul>
+<li>Gradient Boosting algorithms can be used for regression tasks. They build decision trees sequentially, each one correcting the errors of the ensemble.</li>
+</ul></li>
+<li><strong>Support Vector Machines (SVR):</strong>
+<ul>
+<li>Support Vector Machines can be used for regression tasks by finding a hyperplane that best fits the data.</li>
+</ul></li>
+</ol>
+<p>These are just a few examples, and the choice of algorithm depends on factors such as the size and nature of the dataset, the relationship between features and target variables, and computational considerations. It’s often a good practice to experiment with multiple algorithms and choose the one that performs best on a specific task.</p>
+<p>Several machine learning algorithms are popular and widely used in various applications. The popularity of an algorithm often depends on the nature of the problem and the characteristics of the data. Here are some popular machine learning algorithms:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Linear Regression:</strong>
+<ul>
+<li>Used for predicting a continuous outcome based on one or more predictor features. It’s widely used in regression analysis.</li>
+</ul></li>
+<li><strong>Logistic Regression:</strong>
+<ul>
+<li>Used for binary classification problems. It models the probability that a given instance belongs to a particular class.</li>
+</ul></li>
+<li><strong>Decision Trees:</strong>
+<ul>
+<li>A tree-like model of decisions, where each node represents a test on an attribute, each branch represents the outcome of the test, and each leaf node represents a class label.</li>
+</ul></li>
+<li><strong>Random Forest:</strong>
+<ul>
+<li>An ensemble learning method that constructs a multitude of decision trees during training and outputs the mode of the classes for classification or the mean prediction for regression.</li>
+</ul></li>
+<li><strong>Support Vector Machines (SVM):</strong>
+<ul>
+<li>A supervised machine learning algorithm that can be used for classification or regression tasks. It finds a hyperplane that best separates the data into classes.</li>
+</ul></li>
+<li><strong>K-Nearest Neighbors (KNN):</strong>
+<ul>
+<li>A simple, instance-based learning algorithm where an object is classified by its neighbors. It assigns the class label based on the majority class of its k nearest neighbors.</li>
+</ul></li>
+<li><strong>K-Means Clustering:</strong>
+<ul>
+<li>A clustering algorithm that partitions data into k clusters based on similarity. It’s commonly used for unsupervised learning tasks.</li>
+</ul></li>
+<li><strong>Naive Bayes:</strong>
+<ul>
+<li>A probabilistic algorithm based on Bayes’ theorem that is particularly suited for classification tasks. It assumes that the features are conditionally independent given the class.</li>
+</ul></li>
+<li><strong>Gradient Boosting (e.g., XGBoost, LightGBM):</strong>
+<ul>
+<li>An ensemble learning technique where weak models (typically decision trees) are trained sequentially, and each new model corrects the errors of the previous ones.</li>
+</ul></li>
+<li><strong>Neural Networks (Deep Learning):</strong>
+<ul>
+<li>Artificial neural networks inspired by the structure and function of the human brain. Deep learning models, such as feedforward neural networks, convolutional neural networks (CNNs), and recurrent neural networks (RNNs), have achieved remarkable success in various tasks.</li>
+</ul></li>
+</ol>
+<p>These algorithms cover a range of tasks, including regression, classification, clustering, and more. The choice of algorithm depends on the specific problem at hand and the characteristics of the data. Often, a combination of algorithms or ensemble methods is used to achieve better performance.</p>
+<p>Random Forest vs Decision Trees</p>
+<p>Decision Trees and Random Forest are both machine learning algorithms, and Random Forest is an ensemble learning method that builds on Decision Trees. Here are the key differences between Decision Trees and Random Forest:</p>
+</div>
+<div id="decision-trees" class="section level3 hasAnchor" number="2.1.4">
+<h3><span class="header-section-number">2.1.4</span> Decision Trees:<a href="intro.html#decision-trees" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>Single Model:</strong>
+<ul>
+<li>A Decision Tree is a single model that recursively splits the dataset based on the most significant feature at each node.</li>
+</ul></li>
+<li><strong>Vulnerability to Overfitting:</strong>
+<ul>
+<li>Decision Trees are prone to overfitting, especially when the tree is deep and captures noise in the training data.</li>
+</ul></li>
+<li><strong>High Variance:</strong>
+<ul>
+<li>Due to their tendency to overfit, Decision Trees have high variance, meaning they can be sensitive to small changes in the training data.</li>
+</ul></li>
+<li><strong>Bias-Variance Tradeoff:</strong>
+<ul>
+<li>Decision Trees are an example of a model with a high bias (when they are too simple) and high variance (when they are too complex). Finding the right level of complexity is crucial.</li>
+</ul></li>
+<li><strong>Interpretability:</strong>
+<ul>
+<li>Decision Trees are generally more interpretable, and it’s easier to understand the decision-making process at each node.</li>
+</ul></li>
+</ol>
+</div>
+<div id="random-forest" class="section level3 hasAnchor" number="2.1.5">
+<h3><span class="header-section-number">2.1.5</span> Random Forest:<a href="intro.html#random-forest" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>Ensemble Method:</strong>
+<ul>
+<li>Random Forest is an ensemble method that builds multiple Decision Trees and combines their predictions. Each tree is trained on a random subset of the data and features.</li>
+</ul></li>
+<li><strong>Reduced Overfitting:</strong>
+<ul>
+<li>By aggregating predictions from multiple trees, Random Forest reduces overfitting compared to a single Decision Tree. It achieves a better balance between bias and variance.</li>
+</ul></li>
+<li><strong>Improved Generalization:</strong>
+<ul>
+<li>Random Forest improves generalization performance by creating diverse trees that capture different aspects of the data. The final prediction is an average or a voting mechanism.</li>
+</ul></li>
+<li><strong>Robustness:</strong>
+<ul>
+<li>Random Forest is more robust to outliers and noisy data compared to a single Decision Tree because the ensemble nature helps filter out noise.</li>
+</ul></li>
+<li><strong>Automatic Feature Selection:</strong>
+<ul>
+<li>Random Forest provides a form of automatic feature selection by considering a random subset of features at each split in each tree.</li>
+</ul></li>
+<li><strong>Higher Computational Cost:</strong>
+<ul>
+<li>Building multiple trees and combining their predictions increases the computational cost compared to a single Decision Tree.</li>
+</ul></li>
+</ol>
+<p>In summary, while Decision Trees are simple and interpretable, they are prone to overfitting. Random Forest addresses this limitation by constructing an ensemble of trees, leading to better generalization and robustness at the cost of increased computational complexity. Random Forest is a powerful and widely used algorithm, especially for tasks where high accuracy and robustness are important.</p>
+<p>Random Forest vs Gradient Boosting</p>
+<p>Random Forest and Gradient Boosting are both ensemble learning techniques, but they have some key differences:</p>
+</div>
+<div id="random-forest-1" class="section level3 hasAnchor" number="2.1.6">
+<h3><span class="header-section-number">2.1.6</span> Random Forest:<a href="intro.html#random-forest-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>Ensemble Type:</strong>
+<ul>
+<li>Random Forest is an ensemble of decision trees. It builds multiple decision trees independently and combines their predictions through averaging (for regression) or voting (for classification).</li>
+</ul></li>
+<li><strong>Parallel Training:</strong>
+<ul>
+<li>Trees in a Random Forest can be trained independently and in parallel, making it computationally efficient. This is because each tree is constructed based on a random subset of the data.</li>
+</ul></li>
+<li><strong>Feature Subset at Each Split:</strong>
+<ul>
+<li>For each split in a tree, a random subset of features is considered. This introduces an element of randomness, reducing the risk of overfitting and making the model more robust.</li>
+</ul></li>
+<li><strong>Voting Mechanism:</strong>
+<ul>
+<li>In classification tasks, the final prediction is determined by a majority vote from all the individual trees. In regression tasks, the final prediction is the average of the predictions from all trees.</li>
+</ul></li>
+<li><strong>Less Prone to Overfitting:</strong>
+<ul>
+<li>Random Forest is less prone to overfitting compared to individual decision trees, making it a more robust model.</li>
+</ul></li>
+</ol>
+</div>
+<div id="gradient-boosting" class="section level3 hasAnchor" number="2.1.7">
+<h3><span class="header-section-number">2.1.7</span> Gradient Boosting:<a href="intro.html#gradient-boosting" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>Ensemble Type:</strong>
+<ul>
+<li>Gradient Boosting is also an ensemble of decision trees, but unlike Random Forest, it builds trees sequentially, with each tree correcting the errors of the previous one.</li>
+</ul></li>
+<li><strong>Sequential Training:</strong>
+<ul>
+<li>Trees are trained sequentially, and each subsequent tree focuses on minimizing the errors made by the combined ensemble of the previous trees.</li>
+</ul></li>
+<li><strong>Emphasis on Misclassifications:</strong>
+<ul>
+<li>Gradient Boosting places more emphasis on correcting the mistakes of the ensemble. Each tree is fitted to the residuals (errors) of the combined model.</li>
+</ul></li>
+<li><strong>Weighted Voting:</strong>
+<ul>
+<li>In each step, the predictions of all trees are combined with weights, where the weights are determined by the model’s performance on the training data.</li>
+</ul></li>
+<li><strong>Potential for Overfitting:</strong>
+<ul>
+<li>Gradient Boosting has the potential to overfit the training data, especially if the model is too complex or if the learning rate is too high.</li>
+</ul></li>
+<li><strong>More Sensitive to Hyperparameters:</strong>
+<ul>
+<li>The performance of Gradient Boosting models is more sensitive to hyperparameter tuning compared to Random Forest.</li>
+</ul></li>
+</ol>
+</div>
+<div id="overall-considerations" class="section level3 hasAnchor" number="2.1.8">
+<h3><span class="header-section-number">2.1.8</span> Overall Considerations:<a href="intro.html#overall-considerations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><strong>Parallelization:</strong>
+<ul>
+<li>Random Forest can be easily parallelized, making it suitable for distributed computing environments.</li>
+<li>Gradient Boosting, being a sequential process, is not as easily parallelized.</li>
+</ul></li>
+<li><strong>Hyperparameter Tuning:</strong>
+<ul>
+<li>Gradient Boosting typically requires more careful hyperparameter tuning than Random Forest.</li>
+</ul></li>
+<li><strong>Performance:</strong>
+<ul>
+<li>Both models are powerful and widely used, and their performance can vary depending on the characteristics of the dataset.</li>
+</ul></li>
+</ul>
+<p>In summary, while both Random Forest and Gradient Boosting are ensemble methods based on decision trees, they differ in their construction, training process, and emphasis on correcting errors. The choice between them depends on the specific characteristics of the data and the goals of the modeling task.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tests.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/2_.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

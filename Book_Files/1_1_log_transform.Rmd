@@ -1,0 +1,15 @@
+
+## Transformations
+
+### Log transformation
+
+• To correct for right skewness
+• When considering ratios
+• In settings where errors are feasibly multiplicative, such as when dealing with concentrations or rates
+• To consider orders of magnitude (using log base 10); for example, when considering astronomical distances
+• Counts are often logged (though note the problem with zero counts). Income variable is generally log-transformed.
+
+```{r, echo=FALSE}
+knitr::include_graphics("files/log_transform.png") 
+```
+

@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Machine Learning | Statistics notes</title>
+  <meta name="description" content="These are my statistics notes to my-self" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Machine Learning | Statistics notes" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="These are my statistics notes to my-self" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Machine Learning | Statistics notes" />
+  
+  <meta name="twitter:description" content="These are my statistics notes to my-self" />
+  
+
+<meta name="author" content="Davut Ayan" />
+
+
+<meta name="date" content="2024-03-20" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="tests.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Statistics Notebook</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Acknowledgement</a></li>
+<li class="chapter" data-level="1" data-path="tests.html"><a href="tests.html"><i class="fa fa-check"></i><b>1</b> Tests</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="tests.html"><a href="tests.html#transformations"><i class="fa fa-check"></i><b>1.1</b> Transformations</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="tests.html"><a href="tests.html#log-transformation"><i class="fa fa-check"></i><b>1.1.1</b> Log transformation</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="tests.html"><a href="tests.html#permutation-testing"><i class="fa fa-check"></i><b>1.2</b> Permutation testing</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="machine-learning.html"><a href="machine-learning.html"><i class="fa fa-check"></i><b>2</b> Machine Learning</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="machine-learning.html"><a href="machine-learning.html#ml-algorithms-intro"><i class="fa fa-check"></i><b>2.1</b> ML Algorithms Intro</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="machine-learning.html"><a href="machine-learning.html#binary-classification"><i class="fa fa-check"></i><b>2.1.1</b> Binary Classification:</a></li>
+<li class="chapter" data-level="2.1.2" data-path="machine-learning.html"><a href="machine-learning.html#multi-class-classification"><i class="fa fa-check"></i><b>2.1.2</b> Multi-Class Classification:</a></li>
+<li class="chapter" data-level="2.1.3" data-path="machine-learning.html"><a href="machine-learning.html#continuous-outcome-regression"><i class="fa fa-check"></i><b>2.1.3</b> Continuous Outcome (Regression):</a></li>
+<li class="chapter" data-level="2.1.4" data-path="machine-learning.html"><a href="machine-learning.html#random-forest-vs-decision-trees"><i class="fa fa-check"></i><b>2.1.4</b> Random Forest vs Decision Trees</a></li>
+<li class="chapter" data-level="2.1.5" data-path="machine-learning.html"><a href="machine-learning.html#random-forest-vs-gradient-boosting"><i class="fa fa-check"></i><b>2.1.5</b> Random Forest vs Gradient Boosting</a></li>
+<li class="chapter" data-level="2.1.6" data-path="machine-learning.html"><a href="machine-learning.html#overall-considerations"><i class="fa fa-check"></i><b>2.1.6</b> Overall Considerations:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="machine-learning.html"><a href="machine-learning.html#ml-libraries-in-python"><i class="fa fa-check"></i><b>2.2</b> ML Libraries in Python</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="machine-learning.html"><a href="machine-learning.html#big-data-solutions"><i class="fa fa-check"></i><b>2.2.1</b> Big data solutions</a></li>
+<li class="chapter" data-level="2.2.2" data-path="machine-learning.html"><a href="machine-learning.html#databricks"><i class="fa fa-check"></i><b>2.2.2</b> Databricks</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="machine-learning.html"><a href="machine-learning.html#naive-bayes"><i class="fa fa-check"></i><b>2.3</b> Naive Bayes</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="machine-learning.html"><a href="machine-learning.html#bayesian-classification"><i class="fa fa-check"></i><b>2.3.1</b> Bayesian Classification</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="machine-learning" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Machine Learning<a href="machine-learning.html#machine-learning" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Different machine learning algorithms are suitable for various types of tasks, such as binary classification, multi-class classification, and predicting continuous outcomes. Here are some commonly used algorithms for each task:</p>
+<div id="ml-algorithms-intro" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> ML Algorithms Intro<a href="machine-learning.html#ml-algorithms-intro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="binary-classification" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Binary Classification:<a href="machine-learning.html#binary-classification" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>Logistic Regression:</strong>
+<ul>
+<li>Logistic Regression is a simple and widely used algorithm for binary classification tasks. It models the probability that an instance belongs to a particular class.</li>
+</ul></li>
+<li><strong>Support Vector Machines (SVM):</strong>
+<ul>
+<li>SVM is effective for binary classification. It finds a hyperplane that best separates the data into two classes.</li>
+</ul></li>
+<li><strong>Random Forest:</strong>
+<ul>
+<li>Random Forest is an ensemble learning algorithm that performs well for both binary and multi-class classification tasks. It builds multiple decision trees and combines their predictions.</li>
+</ul></li>
+<li><strong>Gradient Boosting (e.g., XGBoost, LightGBM):</strong>
+<ul>
+<li>Gradient Boosting algorithms are powerful for binary classification tasks. They build trees sequentially, with each tree correcting the errors of the previous one.</li>
+</ul></li>
+<li><strong>Neural Networks:</strong>
+<ul>
+<li>Neural networks, especially architectures like feedforward neural networks, can be used for binary classification tasks. They are particularly effective for complex, non-linear relationships.</li>
+</ul></li>
+</ol>
+</div>
+<div id="multi-class-classification" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Multi-Class Classification:<a href="machine-learning.html#multi-class-classification" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>Logistic Regression (One-vs-All):</strong>
+<ul>
+<li>Logistic Regression can be extended to handle multi-class classification by training multiple binary classifiers (one for each class) in a one-vs-all fashion.</li>
+</ul></li>
+<li><strong>Multinomial Naive Bayes:</strong>
+<ul>
+<li>Naive Bayes can be extended to handle multiple classes, and the multinomial variant is commonly used for text classification tasks.</li>
+</ul></li>
+<li><strong>Random Forest:</strong>
+<ul>
+<li>Random Forest can handle multi-class classification naturally. It builds multiple decision trees, and the final prediction is based on voting across all classes.</li>
+</ul></li>
+<li><strong>Gradient Boosting (e.g., XGBoost, LightGBM):</strong>
+<ul>
+<li>Gradient Boosting algorithms can handle multi-class classification tasks. They build a series of decision trees, each one correcting the errors of the ensemble.</li>
+</ul></li>
+<li><strong>K-Nearest Neighbors (KNN):</strong>
+<ul>
+<li>KNN can be used for multi-class classification by assigning the class label that is most common among the k nearest neighbors.</li>
+</ul></li>
+</ol>
+</div>
+<div id="continuous-outcome-regression" class="section level3 hasAnchor" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> Continuous Outcome (Regression):<a href="machine-learning.html#continuous-outcome-regression" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>Linear Regression:</strong>
+<ul>
+<li>Linear Regression is a basic and widely used algorithm for predicting continuous outcomes. It models the relationship between the features and the target variable as a linear equation.</li>
+</ul></li>
+<li><strong>Decision Trees for Regression:</strong>
+<ul>
+<li>Decision trees can be used for regression tasks by predicting the average value of the target variable in each leaf node.</li>
+</ul></li>
+<li><strong>Random Forest for Regression:</strong>
+<ul>
+<li>Random Forest can be applied to regression tasks by aggregating the predictions of multiple decision trees.</li>
+</ul></li>
+<li><strong>Gradient Boosting for Regression (e.g., XGBoost, LightGBM):</strong>
+<ul>
+<li>Gradient Boosting algorithms can be used for regression tasks. They build decision trees sequentially, each one correcting the errors of the ensemble.</li>
+</ul></li>
+<li><strong>Support Vector Machines (SVR):</strong>
+<ul>
+<li>Support Vector Machines can be used for regression tasks by finding a hyperplane that best fits the data.</li>
+</ul></li>
+</ol>
+<p>These are just a few examples, and the choice of algorithm depends on factors such as the size and nature of the dataset, the relationship between features and target variables, and computational considerations. It’s often a good practice to experiment with multiple algorithms and choose the one that performs best on a specific task.</p>
+<p>Several machine learning algorithms are popular and widely used in various applications. The popularity of an algorithm often depends on the nature of the problem and the characteristics of the data. Here are some popular machine learning algorithms:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Linear Regression:</strong>
+<ul>
+<li>Used for predicting a continuous outcome based on one or more predictor features. It’s widely used in regression analysis.</li>
+</ul></li>
+<li><strong>Logistic Regression:</strong>
+<ul>
+<li>Used for binary classification problems. It models the probability that a given instance belongs to a particular class.</li>
+</ul></li>
+<li><strong>Decision Trees:</strong>
+<ul>
+<li>A tree-like model of decisions, where each node represents a test on an attribute, each branch represents the outcome of the test, and each leaf node represents a class label.</li>
+</ul></li>
+<li><strong>Random Forest:</strong>
+<ul>
+<li>An ensemble learning method that constructs a multitude of decision trees during training and outputs the mode of the classes for classification or the mean prediction for regression.</li>
+</ul></li>
+<li><strong>Support Vector Machines (SVM):</strong>
+<ul>
+<li>A supervised machine learning algorithm that can be used for classification or regression tasks. It finds a hyperplane that best separates the data into classes.</li>
+</ul></li>
+<li><strong>K-Nearest Neighbors (KNN):</strong>
+<ul>
+<li>A simple, instance-based learning algorithm where an object is classified by its neighbors. It assigns the class label based on the majority class of its k nearest neighbors.</li>
+</ul></li>
+<li><strong>K-Means Clustering:</strong>
+<ul>
+<li>A clustering algorithm that partitions data into k clusters based on similarity. It’s commonly used for unsupervised learning tasks.</li>
+</ul></li>
+<li><strong>Naive Bayes:</strong>
+<ul>
+<li>A probabilistic algorithm based on Bayes’ theorem that is particularly suited for classification tasks. It assumes that the features are conditionally independent given the class.</li>
+</ul></li>
+<li><strong>Gradient Boosting (e.g., XGBoost, LightGBM):</strong>
+<ul>
+<li>An ensemble learning technique where weak models (typically decision trees) are trained sequentially, and each new model corrects the errors of the previous ones.</li>
+</ul></li>
+<li><strong>Neural Networks (Deep Learning):</strong>
+<ul>
+<li>Artificial neural networks inspired by the structure and function of the human brain. Deep learning models, such as feedforward neural networks, convolutional neural networks (CNNs), and recurrent neural networks (RNNs), have achieved remarkable success in various tasks.</li>
+</ul></li>
+</ol>
+<p>These algorithms cover a range of tasks, including regression, classification, clustering, and more. The choice of algorithm depends on the specific problem at hand and the characteristics of the data. Often, a combination of algorithms or ensemble methods is used to achieve better performance.</p>
+</div>
+<div id="random-forest-vs-decision-trees" class="section level3 hasAnchor" number="2.1.4">
+<h3><span class="header-section-number">2.1.4</span> Random Forest vs Decision Trees<a href="machine-learning.html#random-forest-vs-decision-trees" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Decision Trees and Random Forest are both machine learning algorithms, and Random Forest is an ensemble learning method that builds on Decision Trees. Here are the key differences between Decision Trees and Random Forest:</p>
+<div id="decision-trees" class="section level4 hasAnchor" number="2.1.4.1">
+<h4><span class="header-section-number">2.1.4.1</span> Decision Trees:<a href="machine-learning.html#decision-trees" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li><strong>Single Model:</strong>
+<ul>
+<li>A Decision Tree is a single model that recursively splits the dataset based on the most significant feature at each node.</li>
+</ul></li>
+<li><strong>Vulnerability to Overfitting:</strong>
+<ul>
+<li>Decision Trees are prone to overfitting, especially when the tree is deep and captures noise in the training data.</li>
+</ul></li>
+<li><strong>High Variance:</strong>
+<ul>
+<li>Due to their tendency to overfit, Decision Trees have high variance, meaning they can be sensitive to small changes in the training data.</li>
+</ul></li>
+<li><strong>Bias-Variance Tradeoff:</strong>
+<ul>
+<li>Decision Trees are an example of a model with a high bias (when they are too simple) and high variance (when they are too complex). Finding the right level of complexity is crucial.</li>
+</ul></li>
+<li><strong>Interpretability:</strong>
+<ul>
+<li>Decision Trees are generally more interpretable, and it’s easier to understand the decision-making process at each node.</li>
+</ul></li>
+</ol>
+</div>
+<div id="random-forest" class="section level4 hasAnchor" number="2.1.4.2">
+<h4><span class="header-section-number">2.1.4.2</span> Random Forest:<a href="machine-learning.html#random-forest" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li><strong>Ensemble Method:</strong>
+<ul>
+<li>Random Forest is an ensemble method that builds multiple Decision Trees and combines their predictions. Each tree is trained on a random subset of the data and features.</li>
+</ul></li>
+<li><strong>Reduced Overfitting:</strong>
+<ul>
+<li>By aggregating predictions from multiple trees, Random Forest reduces overfitting compared to a single Decision Tree. It achieves a better balance between bias and variance.</li>
+</ul></li>
+<li><strong>Improved Generalization:</strong>
+<ul>
+<li>Random Forest improves generalization performance by creating diverse trees that capture different aspects of the data. The final prediction is an average or a voting mechanism.</li>
+</ul></li>
+<li><strong>Robustness:</strong>
+<ul>
+<li>Random Forest is more robust to outliers and noisy data compared to a single Decision Tree because the ensemble nature helps filter out noise.</li>
+</ul></li>
+<li><strong>Automatic Feature Selection:</strong>
+<ul>
+<li>Random Forest provides a form of automatic feature selection by considering a random subset of features at each split in each tree.</li>
+</ul></li>
+<li><strong>Higher Computational Cost:</strong>
+<ul>
+<li>Building multiple trees and combining their predictions increases the computational cost compared to a single Decision Tree.</li>
+</ul></li>
+</ol>
+<p>In summary, while Decision Trees are simple and interpretable, they are prone to overfitting. Random Forest addresses this limitation by constructing an ensemble of trees, leading to better generalization and robustness at the cost of increased computational complexity. Random Forest is a powerful and widely used algorithm, especially for tasks where high accuracy and robustness are important.</p>
+</div>
+</div>
+<div id="random-forest-vs-gradient-boosting" class="section level3 hasAnchor" number="2.1.5">
+<h3><span class="header-section-number">2.1.5</span> Random Forest vs Gradient Boosting<a href="machine-learning.html#random-forest-vs-gradient-boosting" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Random Forest and Gradient Boosting are both ensemble learning techniques, but they have some key differences:</p>
+<div id="random-forest-1" class="section level4 hasAnchor" number="2.1.5.1">
+<h4><span class="header-section-number">2.1.5.1</span> Random Forest:<a href="machine-learning.html#random-forest-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li><strong>Ensemble Type:</strong>
+<ul>
+<li>Random Forest is an ensemble of decision trees. It builds multiple decision trees independently and combines their predictions through averaging (for regression) or voting (for classification).</li>
+</ul></li>
+<li><strong>Parallel Training:</strong>
+<ul>
+<li>Trees in a Random Forest can be trained independently and in parallel, making it computationally efficient. This is because each tree is constructed based on a random subset of the data.</li>
+</ul></li>
+<li><strong>Feature Subset at Each Split:</strong>
+<ul>
+<li>For each split in a tree, a random subset of features is considered. This introduces an element of randomness, reducing the risk of overfitting and making the model more robust.</li>
+</ul></li>
+<li><strong>Voting Mechanism:</strong>
+<ul>
+<li>In classification tasks, the final prediction is determined by a majority vote from all the individual trees. In regression tasks, the final prediction is the average of the predictions from all trees.</li>
+</ul></li>
+<li><strong>Less Prone to Overfitting:</strong>
+<ul>
+<li>Random Forest is less prone to overfitting compared to individual decision trees, making it a more robust model.</li>
+</ul></li>
+</ol>
+</div>
+<div id="gradient-boosting" class="section level4 hasAnchor" number="2.1.5.2">
+<h4><span class="header-section-number">2.1.5.2</span> Gradient Boosting:<a href="machine-learning.html#gradient-boosting" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li><strong>Ensemble Type:</strong>
+<ul>
+<li>Gradient Boosting is also an ensemble of decision trees, but unlike Random Forest, it builds trees sequentially, with each tree correcting the errors of the previous one.</li>
+</ul></li>
+<li><strong>Sequential Training:</strong>
+<ul>
+<li>Trees are trained sequentially, and each subsequent tree focuses on minimizing the errors made by the combined ensemble of the previous trees.</li>
+</ul></li>
+<li><strong>Emphasis on Misclassifications:</strong>
+<ul>
+<li>Gradient Boosting places more emphasis on correcting the mistakes of the ensemble. Each tree is fitted to the residuals (errors) of the combined model.</li>
+</ul></li>
+<li><strong>Weighted Voting:</strong>
+<ul>
+<li>In each step, the predictions of all trees are combined with weights, where the weights are determined by the model’s performance on the training data.</li>
+</ul></li>
+<li><strong>Potential for Overfitting:</strong>
+<ul>
+<li>Gradient Boosting has the potential to overfit the training data, especially if the model is too complex or if the learning rate is too high.</li>
+</ul></li>
+<li><strong>More Sensitive to Hyperparameters:</strong>
+<ul>
+<li>The performance of Gradient Boosting models is more sensitive to hyperparameter tuning compared to Random Forest.</li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div id="overall-considerations" class="section level3 hasAnchor" number="2.1.6">
+<h3><span class="header-section-number">2.1.6</span> Overall Considerations:<a href="machine-learning.html#overall-considerations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><strong>Parallelization:</strong>
+<ul>
+<li>Random Forest can be easily parallelized, making it suitable for distributed computing environments.</li>
+<li>Gradient Boosting, being a sequential process, is not as easily parallelized.</li>
+</ul></li>
+<li><strong>Hyperparameter Tuning:</strong>
+<ul>
+<li>Gradient Boosting typically requires more careful hyperparameter tuning than Random Forest.</li>
+</ul></li>
+<li><strong>Performance:</strong>
+<ul>
+<li>Both models are powerful and widely used, and their performance can vary depending on the characteristics of the dataset.</li>
+</ul></li>
+</ul>
+<p>In summary, while both Random Forest and Gradient Boosting are ensemble methods based on decision trees, they differ in their construction, training process, and emphasis on correcting errors. The choice between them depends on the specific characteristics of the data and the goals of the modeling task.</p>
+
+</div>
+</div>
+<div id="ml-libraries-in-python" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> ML Libraries in Python<a href="machine-learning.html#ml-libraries-in-python" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Several libraries are widely used for machine learning in addition to scikit-learn. Here are some popular ones:</p>
+<ol style="list-style-type: decimal">
+<li><strong>TensorFlow:</strong>
+<ul>
+<li>Developed by Google Brain, TensorFlow is an open-source machine learning library widely used for deep learning applications. It provides a comprehensive set of tools and community support.</li>
+</ul></li>
+<li><strong>PyTorch:</strong>
+<ul>
+<li>PyTorch, developed by Facebook’s AI Research lab (FAIR), is another popular deep learning library. It is known for its dynamic computational graph, making it more flexible for research and experimentation.</li>
+</ul></li>
+<li><strong>Keras:</strong>
+<ul>
+<li>While Keras can be used as a high-level neural networks API with TensorFlow, it is now also integrated with TensorFlow as its official high-level API. It provides a simple and user-friendly interface for building neural networks.</li>
+</ul></li>
+<li><strong>XGBoost:</strong>
+<ul>
+<li>XGBoost is an efficient and scalable implementation of gradient boosting. It is widely used for structured/tabular data and is known for its high performance in Kaggle competitions.</li>
+</ul></li>
+<li><strong>LightGBM:</strong>
+<ul>
+<li>LightGBM is a gradient boosting framework developed by Microsoft. It is designed for distributed and efficient training of large-scale datasets and is particularly useful for categorical features.</li>
+</ul></li>
+<li><strong>CatBoost:</strong>
+<ul>
+<li>CatBoost is a gradient boosting library that is designed to handle categorical features efficiently. It is developed by Yandex and is known for its ease of use.</li>
+</ul></li>
+<li><strong>Pandas:</strong>
+<ul>
+<li>While Pandas is not specifically a machine learning library, it is an essential library for data manipulation and analysis. It is often used in the preprocessing phase of machine learning workflows.</li>
+</ul></li>
+<li><strong>NumPy and SciPy:</strong>
+<ul>
+<li>These libraries are fundamental for scientific computing in Python. NumPy provides support for large, multi-dimensional arrays and matrices, while SciPy builds on NumPy and provides additional functionality for optimization, signal processing, and more.</li>
+</ul></li>
+<li><strong>NLTK and SpaCy:</strong>
+<ul>
+<li>Natural Language Toolkit (NLTK) and SpaCy are libraries used for natural language processing (NLP). They provide tools for tasks such as tokenization, part-of-speech tagging, and named entity recognition.</li>
+</ul></li>
+<li><strong>Statsmodels:</strong>
+<ul>
+<li>Statsmodels is a library for estimating and testing statistical models. It is commonly used for statistical analysis and hypothesis testing.</li>
+</ul></li>
+</ol>
+<p>These libraries cover a broad range of machine learning tasks, from traditional machine learning algorithms to deep learning and specialized tools for tasks like natural language processing. The choice of library often depends on the specific requirements of your machine learning project.</p>
+<div id="big-data-solutions" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Big data solutions<a href="machine-learning.html#big-data-solutions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When dealing with big data in machine learning, specialized libraries and frameworks that can handle distributed computing and parallel processing become essential. Here are some popular libraries and frameworks for big data machine learning:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Apache Spark MLlib:</strong>
+<ul>
+<li>Spark MLlib is part of the Apache Spark ecosystem and provides scalable machine learning libraries for Spark. It includes algorithms for classification, regression, clustering, collaborative filtering, and more. Spark’s distributed computing capabilities make it well-suited for big data processing.</li>
+</ul></li>
+<li><strong>Dask-ML:</strong>
+<ul>
+<li>Dask is a parallel computing library in Python that integrates with popular libraries like NumPy, Pandas, and Scikit-Learn. Dask-ML extends Scikit-Learn to support larger-than-memory computations using parallel processing.</li>
+</ul></li>
+<li><strong>H2O.ai:</strong>
+<ul>
+<li>H2O.ai offers an open-source machine learning platform that includes H2O-3, a distributed machine learning library. H2O-3 supports a variety of machine learning algorithms and is designed to scale horizontally.</li>
+</ul></li>
+<li><strong>MLlib in Apache Flink:</strong>
+<ul>
+<li>Apache Flink is a stream processing framework, and MLlib is its machine learning library. It allows you to build machine learning pipelines in a streaming environment, making it suitable for real-time analytics on big data.</li>
+</ul></li>
+<li><strong>PySpark (Python API for Apache Spark):</strong>
+<ul>
+<li>PySpark is the Python API for Apache Spark. It enables Python developers to use Spark for distributed data processing and machine learning tasks. PySpark’s MLlib is the machine learning library used within the PySpark ecosystem.</li>
+</ul></li>
+<li><strong>Scikit-Spark (formerly known as BigML):</strong>
+<ul>
+<li>Scikit-Spark is an extension of Scikit-Learn that allows you to distribute machine learning computations across a cluster. It’s built on top of Apache Spark and is designed to handle large datasets.</li>
+</ul></li>
+<li><strong>TensorFlow Extended (TFX):</strong>
+<ul>
+<li>TFX is an end-to-end platform for deploying production-ready machine learning models at scale. It is built by Google and includes components for data validation, transformation, training, and serving.</li>
+</ul></li>
+<li><strong>Apache Mahout:</strong>
+<ul>
+<li>Apache Mahout is an open-source project that provides scalable machine learning algorithms. It is designed to work with distributed data processing frameworks like Apache Hadoop.</li>
+</ul></li>
+<li><strong>KNIME Analytics Platform:</strong>
+<ul>
+<li>KNIME is an open-source platform that allows data scientists to visually design, execute, and reuse machine learning workflows. It supports big data processing through integration with Apache Spark and Hadoop.</li>
+</ul></li>
+<li><strong>Cerebro:</strong>
+<ul>
+<li>Cerebro is a Python library for distributed machine learning on Apache Spark. It is designed to provide an interface similar to Scikit-Learn for distributed computing.</li>
+</ul></li>
+</ol>
+<p>When working with big data, the choice of library or framework depends on the specific requirements of your project, the characteristics of your data, and the infrastructure you have available. Apache Spark is a particularly popular choice due to its widespread adoption in the big data community.</p>
+</div>
+<div id="databricks" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Databricks<a href="machine-learning.html#databricks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Databricks is a cloud-based platform built on top of Apache Spark, and it provides a collaborative environment for big data analytics and machine learning. In Databricks, you have access to various machine learning libraries that integrate seamlessly with Apache Spark. Here are some key machine learning libraries commonly used in Databricks:</p>
+<ol style="list-style-type: decimal">
+<li><strong>MLlib (Spark MLlib):</strong>
+<ul>
+<li>Apache Spark MLlib is the native machine learning library for Spark. It provides a scalable set of machine learning algorithms and tools, making it a fundamental choice for machine learning tasks in Databricks.</li>
+</ul></li>
+<li><strong>Scikit-learn:</strong>
+<ul>
+<li>Scikit-learn is a popular machine learning library in Python. While it’s not native to Spark, you can use it in Databricks notebooks to perform machine learning tasks on smaller datasets that fit into memory.</li>
+</ul></li>
+<li><strong>XGBoost and LightGBM:</strong>
+<ul>
+<li>XGBoost and LightGBM are gradient boosting libraries that are widely used for machine learning tasks. They can be integrated with Databricks for boosting algorithms on large-scale datasets.</li>
+</ul></li>
+<li><strong>TensorFlow and PyTorch:</strong>
+<ul>
+<li>TensorFlow and PyTorch are popular deep learning frameworks. Databricks provides support for these frameworks, allowing you to build and train deep learning models using distributed computing capabilities.</li>
+</ul></li>
+<li><strong>Horovod:</strong>
+<ul>
+<li>Horovod is a distributed deep learning training framework that works with TensorFlow, PyTorch, and Apache MXNet. It allows you to scale deep learning training across multiple nodes in a Databricks cluster.</li>
+</ul></li>
+<li><strong>Koalas:</strong>
+<ul>
+<li>Koalas is a Pandas API for Apache Spark, making it easier for data scientists familiar with Pandas to work with large-scale datasets using the Spark infrastructure. It’s not a machine learning library itself but can be useful for data preprocessing and exploration.</li>
+</ul></li>
+<li><strong>Delta Lake:</strong>
+<ul>
+<li>While not a machine learning library, Delta Lake is a storage layer that brings ACID transactions to Apache Spark and big data workloads. It can be used in conjunction with machine learning workflows to manage and version large datasets.</li>
+</ul></li>
+<li><strong>MLflow:</strong>
+<ul>
+<li>MLflow is an open-source platform for managing the end-to-end machine learning lifecycle. It provides tools for tracking experiments, packaging code into reproducible runs, and sharing and deploying models. MLflow can be easily integrated into Databricks.</li>
+</ul></li>
+</ol>
+<p>When working with Databricks, it’s common to leverage MLlib for distributed machine learning tasks and use external libraries like Scikit-learn, TensorFlow, and PyTorch for specific algorithms or deep learning workloads. Additionally, Databricks integrates with MLflow to streamline the machine learning workflow.</p>
+
+</div>
+</div>
+<div id="naive-bayes" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Naive Bayes<a href="machine-learning.html#naive-bayes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Naive Bayes models are a group of extremely fast and simple classification algorithms that are often suitable for very high-dimensional datasets. Because they are so fast and have so few tunable parameters, they end up being very useful as a quick-and-dirty baseline for a classification problem.</p>
+<div id="bayesian-classification" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Bayesian Classification<a href="machine-learning.html#bayesian-classification" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>These rely on Bayes’s theorem, which is an equation describing the relationship of conditional probabilities of statistical quantities. In Bayesian classification, we’re interested in finding the probability of a label given some observed features</p>
+<p><strong>Gaussian Naive Bayes</strong></p>
+<p>Perhaps the easiest naive Bayes classifier to understand is Gaussian naive Bayes. In this classifier, the assumption is that data from each label is drawn from a simple Gaussian distribution. Imagine that you have the following data:</p>
+<p><strong>When to Use Naive Bayes</strong></p>
+<p>Because naive Bayesian classifiers make such stringent assumptions about data, they will generally not perform as well as a more complicated model. That said, they have several advantages:</p>
+<p>• They are extremely fast for both training and prediction
+• They provide straightforward probabilistic prediction
+• They are often very easily interpretable
+• They have very few (if any) tunable parameters</p>
+<p>These advantages mean a naive Bayesian classifier is often a good choice as an initial baseline classification. If it performs suitably, then congratulations: you have a very fast, very interpretable classifier for your problem. If it does not perform well, then you can begin exploring more sophisticated models, with some baseline knowledge of how well they should perform.</p>
+<p>Naive Bayes classifiers tend to perform especially well in one of the following situations:
+• When the naive assumptions actually match the data (very rare in practice)
+• For very well-separated categories, when model complexity is less important
+• For very high-dimensional data, when model complexity is less important</p>
+
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="tests.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/2_ml_intro.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["statistics notebook.pdf", "statistics notebook.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
